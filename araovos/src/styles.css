@@ -1,3 +1,24 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+
+.p-button {
+    background: rgb(82, 201, 108);
+    background-color: rgb(82, 201, 108);
+    border-color: rgb(82, 201, 108);
+}
+
+.p-button:hover {
+    background: green;
+    border-color: green; 
+}
+
+.p-button:focus,
+.p-button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.p-sidebar-close-icon {
+    color: rgb(82, 201, 108);
+}

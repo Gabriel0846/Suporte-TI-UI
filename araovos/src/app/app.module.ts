@@ -8,11 +8,14 @@ import { SidebarModule } from 'primeng/sidebar';
 import { NavComponent } from './components/nav/nav.component';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuModule } from 'primeng/menu';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ButtonModule,
     SidebarModule,
-    TabMenuModule
+    TabMenuModule,
+    MenuModule
   ],
   providers: [
     provideClientHydration()

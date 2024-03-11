@@ -1,10 +1,28 @@
-<div class="card flex justify-content-center">
-  <p-sidebar [(visible)]="sidebarVisible">
-      <h3>Sidebar</h3>
-      <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
+<div class="sidebar-container">
+  <p-sidebar [(visible)]="sidebarVisible" [blockScroll]="true" styleClass="custom-sidebar">
+    <div class="sidebar-menu">
+      <img src="assets/img/logo.svg" alt="logo do programa">
+      <a routerLink="/" class="menu-item">
+        <i class="pi pi-home"></i>
+        <span>Home</span>
+      </a>
+      <a routerLink="/" class="menu-item">
+        <i class="pi pi-briefcase"></i>
+        <span>Técnicos</span>
+      </a>
+      <a routerLink="/" class="menu-item">
+        <i class="pi pi-user"></i>
+        <span>Clientes</span>
+      </a>
+      <a routerLink="/" class="menu-item">
+        <i class="pi pi-info-circle"></i>
+        <span>Sobre</span>
+      </a>
+      <a routerLink="/" class="menu-item">
+        <i class="pi pi-sign-in"></i>
+        <span>Sair</span>
+      </a>
+    </div>
   </p-sidebar>
-  <p-button (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
+  <p-button (click)="sidebarVisible = !sidebarVisible" icon="pi pi-bars" class="sidebar-toggle-button custom-button"></p-button>
 </div>
