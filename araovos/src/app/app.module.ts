@@ -11,12 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuModule } from 'primeng/menu';
 import { HomeComponent } from './components/home/home.component';
 import { CardModule } from 'primeng/card';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
