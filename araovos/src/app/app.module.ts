@@ -12,6 +12,7 @@ import { MenuModule } from 'primeng/menu';
 import { HomeComponent } from './components/home/home.component';
 import { CardModule } from 'primeng/card';
 import { HeaderComponent } from './components/header/header.component';
+import { TecnicosListComponent } from './components/tecnico/tecnicos-list/tecnicos-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
     NavComponent,
     HomeComponent,
     HeaderComponent,
+    TecnicosListComponent,
   ],
   imports: [
     BrowserModule,

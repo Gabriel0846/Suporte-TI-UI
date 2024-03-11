@@ -11,7 +11,7 @@
 
 .p-button:hover {
     background: green;
-    border-color: green; 
+    border-color: green;
 }
 
 .p-button:focus,
@@ -25,10 +25,21 @@
 }
 
 .p-card {
+    padding: 20px;
     width: 90%;
     margin: auto;
 }
 
 p {
-    color: green;
+    color: rgb(65, 161, 86);
 }
+
+.p-card-title {
+  color: rgb(65, 161, 86);
+}
+
+.p-card-subtitle {
+  color: rgb(82, 201, 108);
+}
+
+

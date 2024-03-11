@@ -1,3 +1,5 @@
 img {
-    height: 21rem;
+  height: 21rem;
+  border-radius: 5px;
+  border: 3px solid rgb(82, 201, 108);
 }
