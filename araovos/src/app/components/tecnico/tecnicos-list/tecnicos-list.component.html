@@ -1,1 +1,41 @@
-<p>tecnicos-list works!</p>
+<div class="mb-3">
+  <p-button type="button" icon="pi pi-chevron-left" styleClass="p-button-text"></p-button>
+  <p-button type="button" icon="pi pi-refresh" styleClass="p-button-text"></p-button>
+  <p-button type="button" icon="pi pi-chevron-right" styleClass="p-button-text"></p-button>
+</div>
+
+<div class="card">
+  <p-table
+    [value]="ELEMENT_DATA"
+    [paginator]="true"
+    [rows]="5"
+    [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    (onPage)="($event)"
+    [rowsPerPageOptions]="[10, 25, 50]"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width:25%">Position</th>
+        <th style="width:25%">Name</th>
+        <th style="width:25%">Weight</th>
+        <th style="width:25%">Symbol</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+      <tr>
+        <td>{{ customer.position }}</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.weight }}</td>
+        <td>{{ customer.symbol }}</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorleft">
+      <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+      <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-table>
+</div>
