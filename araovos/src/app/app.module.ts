@@ -14,6 +14,7 @@ import { CardModule } from 'primeng/card';
 import { HeaderComponent } from './components/header/header.component';
 import { TecnicosListComponent } from './components/tecnico/tecnicos-list/tecnicos-list.component';
 import { TableModule } from 'primeng/table';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TableModule } from 'primeng/table';
     HomeComponent,
     HeaderComponent,
     TecnicosListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
