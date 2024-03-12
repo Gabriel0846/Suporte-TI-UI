@@ -1,0 +1,61 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-card {
+  width: 350px;
+}
+
+.p-card {
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.p-field {
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+}
+
+/* Estilo para o botão ao lado do campo de senha */
+.p-field .p-password .p-inputtext {
+  width: calc(100% - 32px); /* Garante que o campo de senha não ultrapasse o botão */
+}
+
+.p-field .p-password .p-inputwrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.p-field .p-password button {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.p-field .p-password button:focus {
+  background: none;
+}
+
+.p-field .p-password button:hover {
+  background: none;
+}
+
+.p-button-text {
+  border-left: 1rem;
+  border-right: 1rem;
+  border-top: 1rem;
+  width: 20%;
+  color: white;
+}

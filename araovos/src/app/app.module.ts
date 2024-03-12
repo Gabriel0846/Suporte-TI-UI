@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TecnicosListComponent } from './components/tecnico/tecnicos-list/tecnicos-list.component';
 import { TableModule } from 'primeng/table';
 import { LoginComponent } from './components/login/login.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { LoginComponent } from './components/login/login.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ButtonModule,
     CardModule,
@@ -35,6 +39,7 @@ import { LoginComponent } from './components/login/login.component';
     SidebarModule,
     TabMenuModule,
     TableModule,
+    InputTextModule
   ],
   providers: [
     provideClientHydration()
