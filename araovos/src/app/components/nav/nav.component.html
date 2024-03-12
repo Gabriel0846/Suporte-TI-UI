@@ -3,11 +3,11 @@
   <p-sidebar [(visible)]="sidebarVisible" [blockScroll]="true" styleClass="custom-sidebar">
     <div class="sidebar-menu">
       <img src="assets/img/logo.svg" alt="logo do programa">
-      <a routerLink="home" class="menu-item">
+      <a routerLink="home" class="menu-item" (click)="sidebarVisible = !sidebarVisible">
         <i class="pi pi-home"></i>
         <span>Home</span>
       </a>
-      <a routerLink="tecnicos" class="menu-item">
+      <a routerLink="tecnicos" class="menu-item" (click)="sidebarVisible = !sidebarVisible">
         <i class="pi pi-briefcase"></i>
         <span>Técnicos</span>
       </a>

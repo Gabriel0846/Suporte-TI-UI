@@ -1,7 +1,6 @@
 <div class="mb-3">
-  <p-button type="button" icon="pi pi-chevron-left" styleClass="p-button-text"></p-button>
   <p-button type="button" icon="pi pi-refresh" styleClass="p-button-text"></p-button>
-  <p-button type="button" icon="pi pi-chevron-right" styleClass="p-button-text"></p-button>
+  <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
 </div>
 
 <div class="card">
@@ -31,11 +30,8 @@
         <td>{{ customer.symbol }}</td>
       </tr>
     </ng-template>
+    <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
     <ng-template pTemplate="paginatorleft">
-      <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
-    </ng-template>
-    <ng-template pTemplate="paginatorright">
-      <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
     </ng-template>
   </p-table>
 </div>

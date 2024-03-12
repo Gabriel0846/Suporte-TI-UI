@@ -42,4 +42,49 @@ p {
   color: rgb(82, 201, 108);
 }
 
+.pi-bars {
+    color: white;
+}
 
+.pi-refresh {
+    color: white;
+}
+
+.pi-plus {
+    color: white;
+}
+
+.p-ripple {
+    color: rgb(65, 161, 86);
+    border-color: rgb(215, 255, 224);
+
+}
+
+.p-dropdown:not(.p-disabled):hover {
+    border-color: green;
+}
+
+.p-dropdown-item.p-highlight.p-focus {
+    background: rgb(215, 255, 224);
+  }
+
+.p-paginator-current {
+    color: green;
+}
+
+.p-paginator {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.p-paginator-page.p-highlight {
+    background: rgb(215, 255, 224);
+    border-color: rgb(215, 255, 224);
+    color: green;
+}
+
+.p-focus {
+    box-shadow: none;
+    border-color:rgb(215, 255, 224) ;
+}
