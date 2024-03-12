@@ -16,18 +16,20 @@
   >
     <ng-template pTemplate="header">
       <tr>
-        <th style="width:25%">Position</th>
-        <th style="width:25%">Name</th>
-        <th style="width:25%">Weight</th>
-        <th style="width:25%">Symbol</th>
+        <th style="width:25%">Id</th>
+        <th style="width:25%">Nome</th>
+        <th style="width:25%">CPF</th>
+        <th style="width:25%">Email</th>
+        <th style="width:25%">Ações</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-customer>
+    <ng-template pTemplate="body" let-Tecnico>
       <tr>
-        <td>{{ customer.position }}</td>
-        <td>{{ customer.name }}</td>
-        <td>{{ customer.weight }}</td>
-        <td>{{ customer.symbol }}</td>
+        <td>{{ Tecnico.id }}</td>
+        <td>{{ Tecnico.nome }}</td>
+        <td>{{ Tecnico.cpf }}</td>
+        <td>{{ Tecnico.email }}</td>
+        <td>{{ Tecnico.acoes }}</td>
       </tr>
     </ng-template>
     <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
