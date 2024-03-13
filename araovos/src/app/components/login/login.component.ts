@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Credenciais } from '../modelos/credenciais';
 import { FormControl, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,8 +12,6 @@ import { MessageService } from 'primeng/api';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private messageService: MessageService) {}
-  
   username: string;
   password: string;
   passwordVisible: boolean = false;
@@ -25,25 +24,21 @@ export class LoginComponent implements OnInit {
   email = new FormControl(null, Validators.email);
   senha = new FormControl(null, Validators.minLength(3));
 
-  
+  constructor(private toast: ToastrService) {}
 
   ngOnInit(): void {
 
   }
 
   logar() {
-    console.log('Tentativa de login');
-    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Message Content', life: 3000 });
-    console.log('depois da mensagem');
+    this.toast.error('Usuario e/ou senha incorretos!' , 'login')
+    this.creds.senha = '';
   }
 
   validarCampos(): boolean {
-    console.log('Tentativa de validar');
     if(this.email.valid && this.senha.valid) {
-      console.log('deu certo');     
       return true;
     } else {
-      console.log('deu errado');
       return false;
     }
   }

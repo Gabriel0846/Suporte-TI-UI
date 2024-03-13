@@ -18,9 +18,7 @@ import { MenuModule } from 'primeng/menu';
 import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
-import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
-import { MessageModule } from 'primeng/message';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -44,12 +42,15 @@ import { MessageModule } from 'primeng/message';
     TabMenuModule,
     TableModule,
     InputTextModule,
-    ToastModule,
-    MessageModule
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      closeButton: true,
+      progressBar:true
+    })
+
   ],
   providers: [
     provideClientHydration(),
-    MessageService
   ],
   bootstrap: [AppComponent]
 })
