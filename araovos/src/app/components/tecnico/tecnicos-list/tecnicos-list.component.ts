@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tecnico } from '../../modelos/tecnico';
+import { Tecnico } from '../../../modelos/tecnico';
 
 @Component({
   selector: 'app-tecnicos-list',

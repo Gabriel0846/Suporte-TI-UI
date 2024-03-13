@@ -6,27 +6,25 @@
         <div class="p-field">
           <label for="username">Email</label>
           <input
-          type="text"
-          id="username"
-          pInputText
-          [formControl]="email"
-          [(ngModel)]="creds.email"
-          name="email"
-          autocomplete="email"
-          required>
+            type="text"
+            id="username"
+            pInputText
+            [(ngModel)]="creds.email"
+            [formControl]="email"
+            autocomplete="email"
+            required>
         </div>
         <div class="p-field">
           <label for="password">Senha</label>
           <input
-          type="password"
-          id="password"
-          pInputText
-          [formControl]="senha"
-          [(ngModel)]="creds.senha"
-          name="senha"
-          required>
+            type="password"
+            id="password"
+            pInputText
+            [(ngModel)]="creds.senha"
+            [formControl]="senha"
+            required>
         </div>
-        <button pButton pRipple (click)="logar()" [disabled]="!validarCampos()" type="submit" pButton label="Entrar"></button>
+        <button pButton pRipple (click)="logar()" [disabled]="!validarCampos()" type="button" pButton label="Entrar"></button>
 
       </form>
     </div>
