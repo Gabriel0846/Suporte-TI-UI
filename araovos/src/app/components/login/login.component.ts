@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Credenciais } from '../../modelos/credenciais';
 import { FormControl, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+import { ToastrService} from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
 
 
@@ -29,18 +29,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   logar() {
-    this.service.authenticate(this.creds).subscribe(resposta => {
-      console.log('Resposta do servidor:', resposta); // Verifica a resposta completa do servidor
-
-      // Exibe a token de autenticação na notificação, se estiver presente na resposta
-      const token = resposta.headers.get('Authorization');
-      if (token) {
-        this.toast.info(token);
-      } else {
-        this.toast.error('Token de autenticação não encontrado na resposta do servidor.');
+    this.service.authenticate(this.creds).subscribe({
+      next: (resposta) => {
+        this.service.successfulLogin(resposta.headers.get('Authorization').substring(7))
+      },
+      error: () => {
+        this.toast.error('Usuário e/ou senha inválidos');
       }
     });
   }
+  
 
   validarCampos(): boolean {
     return this.email.valid && this.senha.valid

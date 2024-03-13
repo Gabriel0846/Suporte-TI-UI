@@ -16,4 +16,8 @@ export class AuthService {
       responseType: 'text'
     })
   }
+
+  successfulLogin(authToken: string) {
+    localStorage.setItem('token', authToken);
+  }
 }
