@@ -20,6 +20,7 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
   ],
   providers: [
     provideClientHydration(),
+    AuthInterceptorProvider,
   ],
   bootstrap: [AppComponent]
 })
