@@ -1,9 +1,6 @@
-<div class="mb-3">
-  <p-button type="button" icon="pi pi-refresh" styleClass="p-button-text"></p-button>
-  <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
-</div>
-
 <div class="card">
+  <h2>Lista de Tecnicos</h2>
+  <p-button icon="pi pi-user-plus"></p-button>
   <p-table
     [value]="ELEMENT_DATA"
     [paginator]="true"
@@ -31,9 +28,6 @@
         <td>{{ Tecnico.email }}</td>
         <td>{{ Tecnico.acoes }}</td>
       </tr>
-    </ng-template>
-    <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
-    <ng-template pTemplate="paginatorleft">
     </ng-template>
   </p-table>
 </div>

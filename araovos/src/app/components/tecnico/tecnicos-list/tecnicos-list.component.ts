@@ -1,28 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Tecnico } from '../../../modelos/tecnico';
+import { TecnicoService } from '../../../services/tecnico.service';
 
 @Component({
   selector: 'app-tecnicos-list',
   templateUrl: './tecnicos-list.component.html',
-  styleUrl: './tecnicos-list.component.css'
+  styleUrls: ['./tecnicos-list.component.css']
 })
-export class TecnicosListComponent implements OnInit{
+export class TecnicosListComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', "acoes"];
-  ELEMENT_DATA: Tecnico [] = [
-    {
-      id: 1,
-      nome: 'Gabriel Lopes',
-      cpf: '123.456.789-10',
-      email: 'gabriel@mail.com',
-      senha: '1234',
-      perfis: ['0'],
-      dataCriacao: '12/03/2023'
-    }
-  ]
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'acoes'];
+  ELEMENT_DATA: Tecnico[] = [];
+
+  constructor(private service: TecnicoService) { }
 
   ngOnInit(): void {
+    this.findAll();
+  }
 
+  findAll() {
+    this.service.findAll().subscribe(resposta => {
+      this.ELEMENT_DATA = resposta;
+    });
   }
 }
-
