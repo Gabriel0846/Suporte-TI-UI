@@ -37,7 +37,8 @@
   }
   
   .sidebar-toggle-button {
-    margin-left: 20px;
+    margin-top: -60px;
+    margin-left: 1rem;
   }
   
   .custom-sidebar .p-button {

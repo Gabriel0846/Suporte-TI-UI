@@ -1,0 +1,9 @@
+h2 {
+    width: 100%;
+    text-align: center;
+    color: green;
+}
+
+.card-container {
+    margin: 15px; 
+  }
