@@ -4,10 +4,10 @@ import { TecnicoService } from '../../../services/tecnico.service';
 
 @Component({
   selector: 'app-tecnicos-list',
-  templateUrl: './tecnicos-list.component.html',
-  styleUrls: ['./tecnicos-list.component.css']
+  templateUrl: './tecnico-list.component.html',
+  styleUrls: ['./tecnico-list.component.css']
 })
-export class TecnicosListComponent implements OnInit {
+export class TecnicoListComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'acoes'];
   ELEMENT_DATA: Tecnico[] = [];

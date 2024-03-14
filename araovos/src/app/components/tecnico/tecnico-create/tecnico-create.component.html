@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="form">
+        <p-button label="Voltar"><i class="pi pi-arrow-left"> </i></p-button>
+        <div class="login-container">
+            <div class="login-card">
+              <div class="p-card p-fluid">
+                <h2>Cadastrar Tecnico</h2>
+                <form>
+                    <h3>Perfil</h3>
+                    <div class="card flex flex-column">
+                        <div class="flex align-items-center" style="margin-bottom: 10px;">
+                            <p-checkbox label="Admin" name="perfil" value="Admin"></p-checkbox>
+                        </div>
+                        <div class="flex align-items-center" style="margin-bottom: 10px;">
+                            <p-checkbox label="Tecnico" name="perfil" value="Tecnico"></p-checkbox>
+                        </div>
+                        <div class="flex align-items-center" style="margin-bottom: 10px;">
+                            <p-checkbox label="Cliente" name="perfil" value="Cliente"></p-checkbox>
+                        </div>
+                    </div>
+
+                    <h3>Dados do Usuario</h3>
+
+                    <div class="flex flex-column gap-2">
+                        <span class="p-float-label">
+                            <input type="text" pInputText />
+                            <label for="username">Nome</label>
+                        </span>
+                        <small id="username-help">Ex:.. Gabriel Lopes</small>
+                    </div>
+
+                    <div class="flex flex-column gap-2">
+                        <span class="p-float-label">
+                            <input type="text" pInputText />
+                            <label for="username">CPF</label>
+                        </span>
+                        <small id="username-help">Ex:.. 123.456.789-10</small>
+                    </div>
+
+                    <div class="flex flex-column gap-2">
+                        <span class="p-float-label">
+                            <input type="text" pInputText />
+                            <label for="username">Email</label>
+                        </span>
+                        <small>Ex:.. exemplo&#64;email.com</small>
+                    </div>
+
+                    <div class="flex flex-column gap-2">
+                        <span class="p-float-label">
+                            <input type="password" pInputText />
+                            <label>Senha</label>
+                        </span>
+                        <small>Ex:.. EuAmoBackEnd</small>
+                    </div>
+                    <p-button label="Submit"></p-button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+</div>

@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
-import { TecnicosListComponent } from './components/tecnico/tecnicos-list/tecnicos-list.component';
+import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 
 import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
@@ -19,8 +19,11 @@ import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { TreeSelectModule } from 'primeng/treeselect';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,9 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     NavComponent,
     HomeComponent,
     HeaderComponent,
-    TecnicosListComponent,
+    TecnicoListComponent,
     LoginComponent,
+    TecnicoCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     TabMenuModule,
     TableModule,
     InputTextModule,
+    CheckboxModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,
