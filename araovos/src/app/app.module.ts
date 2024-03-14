@@ -24,6 +24,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { CheckboxModule } from 'primeng/checkbox';
+import { InputMaskModule } from 'primeng/inputmask';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     TableModule,
     InputTextModule,
     CheckboxModule,
+    InputMaskModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,

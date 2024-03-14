@@ -1,58 +1,58 @@
 <div class="container">
     <div class="form">
-        <p-button label="Voltar"><i class="pi pi-arrow-left"> </i></p-button>
+        <p-button routerLink="../" label="Voltar"><i class="pi pi-arrow-left"></i> Voltar</p-button>
         <div class="login-container">
             <div class="login-card">
               <div class="p-card p-fluid">
-                <h2>Cadastrar Tecnico</h2>
+                <h2>Cadastrar Técnico</h2>
                 <form>
                     <h3>Perfil</h3>
                     <div class="card flex flex-column">
-                        <div class="flex align-items-center" style="margin-bottom: 10px;">
-                            <p-checkbox label="Admin" name="perfil" value="Admin"></p-checkbox>
+                        <div class="flex align-items-center">
+                            <p-checkbox (click)="addPerfil(0)" label="Admin" name="perfil" value="Admin"></p-checkbox>
                         </div>
-                        <div class="flex align-items-center" style="margin-bottom: 10px;">
-                            <p-checkbox label="Tecnico" name="perfil" value="Tecnico"></p-checkbox>
+                        <div class="flex align-items-center">
+                            <p-checkbox (click)="addPerfil(1)" label="Técnico" name="perfil" value="Técnico"></p-checkbox>
                         </div>
-                        <div class="flex align-items-center" style="margin-bottom: 10px;">
-                            <p-checkbox label="Cliente" name="perfil" value="Cliente"></p-checkbox>
+                        <div class="flex align-items-center">
+                            <p-checkbox (click)="addPerfil(2)" label="Cliente" name="perfil" value="Cliente"></p-checkbox>
                         </div>
                     </div>
 
-                    <h3>Dados do Usuario</h3>
+                    <h3>Dados do Usuário</h3>
 
                     <div class="flex flex-column gap-2">
                         <span class="p-float-label">
-                            <input type="text" pInputText />
-                            <label for="username">Nome</label>
+                            <input type="text" pInputText name="nome" [(ngModel)]="tecnico.nome" [formControl]="nome" required/>
+                            <label for="nome">Nome</label>
                         </span>
-                        <small id="username-help">Ex:.. Gabriel Lopes</small>
+                        <small id="nome-help">Exemplo: Gabriel Lopes</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <span class="p-float-label">
-                            <input type="text" pInputText />
-                            <label for="username">CPF</label>
+                            <p-inputMask mask="999.999.999-99" name="cpf" type="text" [(ngModel)]="tecnico.cpf" [formControl]="CPF" />
+                            <label for="CPF">CPF</label>
                         </span>
-                        <small id="username-help">Ex:.. 123.456.789-10</small>
+                        <small id="CPF-help">Exemplo: 123.456.789-10</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <span class="p-float-label">
-                            <input type="text" pInputText />
-                            <label for="username">Email</label>
+                            <input type="email" pInputText name="email" [(ngModel)]="tecnico.email" [formControl]="email" required />
+                            <label for="email">Email</label>
                         </span>
-                        <small>Ex:.. exemplo&#64;email.com</small>
+                        <small>Exemplo: exemplo&#64;email.com</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <span class="p-float-label">
-                            <input type="password" pInputText />
-                            <label>Senha</label>
+                            <input type="password" pInputText name="senha" [(ngModel)]="tecnico.senha" [formControl]="senha" required/>
+                            <label for="senha">Senha</label>
                         </span>
-                        <small>Ex:.. EuAmoBackEnd</small>
+                        <small>Exemplo: EuAmoBackEnd</small>
                     </div>
-                    <p-button label="Submit"></p-button>
+                    <p-button (click)="create()" [disabled]="!validaCampos()" label="Enviar"></p-button>
                 </form>
               </div>
             </div>
