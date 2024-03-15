@@ -3,6 +3,15 @@ div {
     margin-top: 1rem;
 }
 
-p-ripple {
+.p-ripple {
     color: white;
+}
+
+.voltar-button {
+    color: white;
+}
+
+/* Estilo para o botão Cancelar */
+.cancelar-button {
+    background-color: red;
 }

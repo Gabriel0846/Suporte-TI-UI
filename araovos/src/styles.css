@@ -63,7 +63,7 @@ p {
     color: white;
 }
 
-.p-ripple {
+.ng-star-inserted {
     color: rgb(65, 161, 86);
     border-color: rgb(215, 255, 224);
 
@@ -98,3 +98,6 @@ p {
     border-color:rgb(215, 255, 224) ;
 }
 
+.p-ripple {
+    color: white;
+}
