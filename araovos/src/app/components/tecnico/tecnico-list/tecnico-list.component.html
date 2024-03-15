@@ -27,7 +27,14 @@
         <td>{{ Tecnico.nome }}</td>
         <td>{{ Tecnico.cpf }}</td>
         <td>{{ Tecnico.email }}</td>
-        <td>{{ Tecnico.acoes }}</td>
+        <td class="colunaacoes">
+          <a routerLink="">
+            <i class="pi pi-pencil"> </i>
+          </a>
+          <a routerLink="">
+            <i class="pi pi-trash"></i>
+          </a>
+        </td>
       </tr>
     </ng-template>
   </p-table>

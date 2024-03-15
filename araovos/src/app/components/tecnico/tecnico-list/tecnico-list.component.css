@@ -1,9 +1,17 @@
 h2 {
     width: 100%;
     text-align: center;
-    color: green;
 }
 
 .card-container {
-    margin: 15px; 
-  }
+    margin: 17px; 
+}
+
+.pi-trash {
+    color: red
+}
+
+.pi-pencil {
+    color: green;
+    margin-right: 1rem;
+}

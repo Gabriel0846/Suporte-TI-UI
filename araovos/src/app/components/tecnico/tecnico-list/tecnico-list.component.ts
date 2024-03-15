@@ -9,7 +9,7 @@ import { TecnicoService } from '../../../services/tecnico.service';
 })
 export class TecnicoListComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'acoes'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   ELEMENT_DATA: Tecnico[] = [];
 
   constructor(private service: TecnicoService) { }
