@@ -6,19 +6,6 @@
                 <div class="p-card p-fluid">
                     <h2>Cadastrar Técnico</h2>
                     <form>
-                        <h3>Perfil</h3>
-                        <div class="card flex flex-column">
-                            <div class="flex align-items-center">
-                                <p-checkbox (click)="addPerfil(0)" label="Admin" name="perfil" value="Admin"></p-checkbox>
-                            </div>
-                            <div class="flex align-items-center">
-                                <p-checkbox (click)="addPerfil(1)" label="Técnico" name="perfil" value="Técnico"></p-checkbox>
-                            </div>
-                            <div class="flex align-items-center">
-                                <p-checkbox (click)="addPerfil(2)" label="Cliente" name="perfil" value="Cliente"></p-checkbox>
-                            </div>
-                        </div>
-
                         <h3>Dados do Usuário</h3>
 
                         <div class="flex flex-column gap-2">
@@ -53,7 +40,6 @@
                             <small>Exemplo: EuAmoBackEnd</small>
                         </div>
                         <p-button (click)="create()" [disabled]="!validaCampos()" label="Enviar"></p-button>
-                        <p-button class="cancelar-button" label="Cancelar"></p-button>
                     </form>
                 </div>
             </div>

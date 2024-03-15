@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { TecnicoService } from '../../../services/tecnico.service';
@@ -12,13 +12,15 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class TecnicoUpdateComponent {
 
+  CheckboxValue: boolean = true;
+
   tecnico: Tecnico = {
     id: '',
     nome: '',
     cpf: '',
     email: '',
     senha: '',
-    perfis: [],
+    perfis: ['1', '2'],
     dataCriacao: ''
   }
 
@@ -31,13 +33,23 @@ export class TecnicoUpdateComponent {
     private service: TecnicoService,
     private toast: ToastrService,
     private router: Router,
+    private route: ActivatedRoute,
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tecnico.id = this.route.snapshot.paramMap.get('id');
+    this.findById();
+   }
 
-  create(): void {
-    this.service.create(this.tecnico).subscribe(() => {
-      this.toast.success('Técnico cadastrado com sucesso', 'Cadastro');
+   findById(): void {
+    this.service.findById(this.tecnico.id).subscribe(resposta => {
+      this.tecnico = resposta;
+    })
+  }
+
+  editar(): void {
+    this.service.update(this.tecnico).subscribe(() => {
+      this.toast.success('Técnico atualizado com sucesso', 'Atualizado');
       this.router.navigate(['tecnicos'])
     }, ex => {
       if(ex.error.errors) {
@@ -48,15 +60,6 @@ export class TecnicoUpdateComponent {
         this.toast.error(ex.error.message);
       }
     })
-  }
-
-  
-  addPerfil(perfil: any): void {
-    if(this.tecnico.perfis.includes(perfil)) {
-      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
-    } else {
-      this.tecnico.perfis.push(perfil);
-    }
   }
 
   validaCampos(): boolean {
