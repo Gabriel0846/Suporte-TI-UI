@@ -26,6 +26,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputMaskModule } from 'primeng/inputmask';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
+import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecn
     LoginComponent,
     TecnicoCreateComponent,
     TecnicoUpdateComponent,
+    TecnicoDeleteComponent,
   ],
   imports: [
     BrowserModule,
