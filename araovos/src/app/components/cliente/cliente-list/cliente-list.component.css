@@ -1,0 +1,18 @@
+h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.card-container {
+    margin: 17px; 
+}
+
+.pi-trash {
+    color: red
+}
+
+.pi-pencil {
+    color: green;
+    margin-right: 1rem;
+}
+

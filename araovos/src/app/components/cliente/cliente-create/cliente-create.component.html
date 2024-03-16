@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="form">
+        <p-button routerLink="../" label="Voltar" class="voltar-button"><i class="pi pi-arrow-left"></i></p-button>
+        <div class="login-container">
+            <div class="login-card">
+                <div class="p-card p-fluid">
+                    <h2>Cadastrar Cliente</h2>
+                    <form>
+                        <h3>Dados do Usuário</h3>
+
+                        <div class="flex flex-column gap-2">
+                            <span class="p-float-label">
+                                <input type="text" pInputText name="nome" [(ngModel)]="cliente.nome" [formControl]="nome" required/>
+                                <label for="nome">Nome</label>
+                            </span>
+                            <small id="nome-help">Exemplo: Gabriel Lopes</small>
+                        </div>
+
+                        <div class="flex flex-column gap-2">
+                            <span class="p-float-label">
+                                <p-inputMask mask="999.999.999-99" name="cpf" type="text" [(ngModel)]="cliente.cpf" [formControl]="CPF" />
+                                <label for="CPF">CPF</label>
+                            </span>
+                            <small id="CPF-help">Exemplo: 123.456.789-10</small>
+                        </div>
+
+                        <div class="flex flex-column gap-2">
+                            <span class="p-float-label">
+                                <input type="email" pInputText name="email" [(ngModel)]="cliente.email" [formControl]="email" required />
+                                <label for="email">Email</label>
+                            </span>
+                            <small>Exemplo: exemplo&#64;email.com</small>
+                        </div>
+
+                        <div class="flex flex-column gap-2">
+                            <span class="p-float-label">
+                                <input type="password" pInputText name="senha" [(ngModel)]="cliente.senha" [formControl]="senha" required/>
+                                <label for="senha">Senha</label>
+                            </span>
+                            <small>Exemplo: EuAmoBackEnd</small>
+                        </div>
+                        <p-button (click)="create()" [disabled]="!validaCampos()" label="Enviar"></p-button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

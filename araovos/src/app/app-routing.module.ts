@@ -8,6 +8,10 @@ import { AuthGuard } from './auth/auth.guard';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
+import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
+import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
+import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -15,10 +19,16 @@ const routes: Routes = [
     path: '', component: NavComponent, canActivate: [AuthGuard],
       children: [
         { path: 'home', component: HomeComponent},
+
         { path: 'tecnicos', component: TecnicoListComponent},
         { path: 'tecnicos/criar', component: TecnicoCreateComponent},
         { path: 'tecnicos/editar/:id', component: TecnicoUpdateComponent},
-        { path: 'tecnicos/deletar/:id', component: TecnicoDeleteComponent}
+        { path: 'tecnicos/deletar/:id', component: TecnicoDeleteComponent},
+
+        { path: 'clientes', component: ClienteListComponent},
+        { path: 'clientes/criar', component: ClienteCreateComponent},
+        { path: 'clientes/editar/:id', component: ClienteUpdateComponent},
+        { path: 'clientes/deletar/:id', component: ClienteDeleteComponent}
       ]
   },
 
