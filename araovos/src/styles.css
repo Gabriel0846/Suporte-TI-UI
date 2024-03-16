@@ -93,6 +93,10 @@ i {
     color: green;
 }
 
+.pi-bell {
+    color: green;
+}
+
 .p-dropdown:not(.p-disabled):hover {
     border-color: green;
 }
