@@ -3,6 +3,7 @@
 @import "primeicons/primeicons.css";
 @import '../node_modules/ngx-toastr/toastr.css';
 
+
 .p-button {
     margin-bottom: 10px;
     background: rgb(82, 201, 108);
@@ -124,6 +125,7 @@ i {
 span {
     color: green;
 }
+
 
 
 

@@ -1,1 +1,48 @@
-<p>tecnico-delete works!</p>
+<div class="container">
+    <div class="form">
+        <p-button routerLink="../../" label="Voltar" class="voltar-button"><i class="pi pi-arrow-left"></i></p-button>
+        <div class="login-container">
+            <div class="login-card">
+                <div class="p-card p-fluid">
+                    <h2>Excluir Técnico</h2>
+                    <form>
+                        <h3>Dados do Usuário</h3>
+
+                        <div class="flex flex-column gap-2">
+                            <span class="p-float-label">
+                                <input type="text" pInputText name="nome" [(ngModel)]="tecnico.nome" [disabled]="true"/>
+                                <label for="nome">Nome</label>
+                            </span>
+                            <small id="nome-help">Exemplo: Gabriel Lopes</small>
+                        </div>
+
+                        <div class="flex flex-column gap-2">
+                            <span class="p-float-label">
+                                <p-inputMask mask="999.999.999-99" name="cpf" type="text" [(ngModel)]="tecnico.cpf" [disabled]="true" />
+                                <label for="CPF">CPF</label>
+                            </span>
+                            <small id="CPF-help">Exemplo: 123.456.789-10</small>
+                        </div>
+
+                        <div class="flex flex-column gap-2">
+                            <span class="p-float-label">
+                                <input type="email" pInputText name="email" [(ngModel)]="tecnico.email" [disabled]="true" />
+                                <label for="email">Email</label>
+                            </span>
+                            <small>Exemplo: exemplo&#64;email.com</small>
+                        </div>
+
+                        <div class="flex flex-column gap-2">
+                            <span class="p-float-label">
+                                <input type="password" pInputText name="senha" [(ngModel)]="tecnico.senha" [disabled]="true"/>
+                                <label for="senha">Senha</label>
+                            </span>
+                            <small>Exemplo: EuAmoBackEnd</small>
+                        </div>
+                        <p-button id="deletarButton" (click)="deletar()" label="Deletar"></p-button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
