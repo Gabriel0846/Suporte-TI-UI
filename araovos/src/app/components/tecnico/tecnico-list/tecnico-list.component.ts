@@ -9,8 +9,9 @@ import { TecnicoService } from '../../../services/tecnico.service';
 })
 export class TecnicoListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'titulo', 'cliente', 'tecnico', 'dataAbertura', 'prioridade', 'status', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];
   ELEMENT_DATA: Tecnico[] = [];
+  filteredData: Tecnico[];
 
   constructor(private service: TecnicoService) { }
 
@@ -21,6 +22,16 @@ export class TecnicoListComponent implements OnInit {
   findAll() {
     this.service.findAll().subscribe(resposta => {
       this.ELEMENT_DATA = resposta;
+      this.filteredData = resposta;
     });
+  }
+
+  applyFilter(value: string) {
+    value = value.trim().toLowerCase();
+    this.filteredData = this.ELEMENT_DATA.filter(tecnico =>
+      tecnico.nome.toLowerCase().includes(value) ||
+      tecnico.cpf.toLowerCase().includes(value) ||
+      tecnico.email.toLowerCase().includes(value)
+    );
   }
 }

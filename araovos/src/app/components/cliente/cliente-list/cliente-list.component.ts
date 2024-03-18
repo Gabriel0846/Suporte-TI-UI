@@ -9,8 +9,9 @@ import { ClienteService } from '../../../services/cliente.service';
 })
 export class ClienteListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'titulo', 'cliente', 'tecnico', 'dataAbertura', 'prioridade', 'status', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];
   ELEMENT_DATA: Cliente[] = [];
+  filteredData: Cliente[];
 
   constructor(private service: ClienteService) { }
 
@@ -21,6 +22,16 @@ export class ClienteListComponent implements OnInit {
   findAll() {
     this.service.findAll().subscribe(resposta => {
       this.ELEMENT_DATA = resposta;
+      this.filteredData = resposta;
     });
+  }
+
+  applyFilter(value: string) {
+    value = value.trim().toLowerCase();
+    this.filteredData = this.ELEMENT_DATA.filter(cliente =>
+      cliente.nome.toLowerCase().includes(value) ||
+      cliente.cpf.toLowerCase().includes(value) ||
+      cliente.email.toLowerCase().includes(value)
+    );
   }
 }

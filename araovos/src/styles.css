@@ -97,6 +97,14 @@ i {
     color: green;
 }
 
+.pi-eye {
+  color: green;
+}
+
+.pi-pencil {
+  color: green;
+}
+
 .p-dropdown:not(.p-disabled):hover {
     border-color: green;
 }
