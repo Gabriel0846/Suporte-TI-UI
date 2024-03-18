@@ -1,3 +1,39 @@
 <div class="container">
+    <p-button routerLink="../" label="Voltar" class="voltar-button"><i class="pi pi-arrow-left"></i></p-button>
+    <div class="p-card p-fluid">
     <h2>Criando chamado</h2>
+
+    <div class="form-group">
+        <label for="username">Titulo do Chamado</label>
+        <input pInputText id="username" aria-describedby="username-help" />
+        <small id="username-help">Ex: Computador está lento</small>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <p-dropdown [options]="status" [(ngModel)]="selectedStatus" optionLabel="name" [showClear]="true" placeholder="Selecione o status" id="status"></p-dropdown>
+    </div>
+
+    <div class="form-group">
+        <label for="prioridade">Prioridade:</label>
+        <p-dropdown [options]="prioridade" [(ngModel)]="selectedPrioridade" optionLabel="name" [showClear]="true" placeholder="Selecione a prioridade" id="prioridade"></p-dropdown>
+    </div>
+
+    <div class="form-group">
+        <label for="tecnico">Técnico:</label>
+        <p-dropdown optionLabel="name" [showClear]="true" placeholder="Selecione um técnico" id="tecnico"></p-dropdown>
+    </div>
+
+    <div class="form-group">
+        <label for="cliente">Cliente:</label>
+        <p-dropdown optionLabel="name" [showClear]="true" placeholder="Selecione um cliente" id="cliente"></p-dropdown>
+    </div>
+
+    <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" class="descricao" rows="5" cols="30" pInputTextarea></textarea>
+    </div>
+
+    <p-button class="btn-abrir">Abrir Chamado</p-button>
+    </div>
 </div>

@@ -24,6 +24,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputMaskModule } from 'primeng/inputmask';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
@@ -67,6 +69,8 @@ import { ChamadoCreateComponent } from './components/chamado/chamado-create/cham
     InputTextModule,
     CheckboxModule,
     InputMaskModule,
+    DropdownModule,
+    InputTextareaModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,
