@@ -1,0 +1,11 @@
+.container {
+    width: 45%;
+    margin: auto auto 3rem auto;
+    padding: 1rem;
+    border-radius: 1rem;
+ }
+
+h2 {
+    text-align: center;
+    color: green;
+}
