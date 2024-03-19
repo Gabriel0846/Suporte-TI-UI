@@ -60,4 +60,6 @@
     resize: vertical; /* Para permitir que o usuário redimensione verticalmente */
 }
 
-
+span {
+    color: red;
+}
