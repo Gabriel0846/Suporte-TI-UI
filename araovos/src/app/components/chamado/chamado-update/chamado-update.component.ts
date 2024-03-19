@@ -10,11 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-chamado-create',
-  templateUrl: './chamado-create.component.html',
-  styleUrls: ['./chamado-create.component.css']
+  selector: 'app-chamado-update',
+  templateUrl: './chamado-update.component.html',
+  styleUrl: './chamado-update.component.css'
 })
-export class ChamadoCreateComponent implements OnInit {
+export class ChamadoUpdateComponent implements OnInit{
 
   prioridade: string | undefined;
   status: string | undefined;

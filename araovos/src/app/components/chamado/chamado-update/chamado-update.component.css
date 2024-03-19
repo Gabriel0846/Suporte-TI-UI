@@ -1,0 +1,63 @@
+.container {
+    width: 45%;
+    margin: auto auto 3rem auto;
+    padding: 1rem;
+    border-radius: 1rem;
+ }
+
+.status-prioridade {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group .p-dropdown {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Adjust PrimeNG Dropdown */
+.p-dropdown {
+    width: 100%;
+}
+
+/* Optional: Adjust PrimeNG Dropdown Menu Height */
+.ui-dropdown-panel {
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto;
+}
+
+.form-group textarea {
+    min-height: 6rem;
+    max-height: 10rem;
+    height: auto; /* Para garantir que a altura se ajuste dinamicamente */
+    resize: vertical; /* Para permitir que o usuário redimensione verticalmente */
+}
+
+
