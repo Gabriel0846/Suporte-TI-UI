@@ -9,16 +9,6 @@ import { TecnicoService } from '../../../services/tecnico.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
-interface Status {
-  name: string;
-  value: number;
-}
-
-interface Prioridade {
-  name: string;
-  value: number;
-}
-
 @Component({
   selector: 'app-chamado-create',
   templateUrl: './chamado-create.component.html',
@@ -26,12 +16,12 @@ interface Prioridade {
 })
 export class ChamadoCreateComponent implements OnInit {
 
-  selectedPrioridade: Prioridade | undefined;
-  selectedStatus: Status | undefined; 
+  prioridade: string | undefined;
+  status: string | undefined;
 
   chamado: Chamado = {
-    prioridade: null,
-    status: null,
+    prioridade: '',
+    status: '',
     titulo: '',
     observacoes: '',
     tecnico: '',
@@ -42,9 +32,6 @@ export class ChamadoCreateComponent implements OnInit {
 
   clientes: Cliente[] = [];
   tecnicos: Tecnico[] = [];
-
-  status: Status[] = [];
-  prioridade: Prioridade[] = [];
 
   prioridadeValid: boolean = false;
   statusValid: boolean = false;
@@ -60,6 +47,20 @@ export class ChamadoCreateComponent implements OnInit {
   tecnicoControl: FormControl = new FormControl(null, [Validators.required]);
   clienteControl: FormControl = new FormControl(null, [Validators.required]);
 
+  // Mapeamento de nomes para valores numéricos
+  statusOptions: any[] = [
+    { label: 'ABERTO', value: 0 },
+    { label: 'EM ANDAMENTO', value: 1 },
+    { label: 'ENCERRADO', value: 3 }
+  ];
+
+  prioridadeOptions: any[] = [
+    { label: 'BAIXA', value: 0 },
+    { label: 'MEDIA', value: 1 },
+    { label: 'ALTA', value: 3 }
+  ];
+
+
   constructor(
     private chamadoService: ChamadoService,
     private clienteService: ClienteService,
@@ -69,32 +70,32 @@ export class ChamadoCreateComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.status = [
-      { name: 'ABERTO', value: 0 },
-      { name: 'EM ANDAMENTO', value: 1 },
-      { name: 'ENCERRADO', value: 3 }
-    ];
-
-    this.prioridade = [
-      { name: 'BAIXA', value: 0 },
-      { name: 'MEDIA', value: 1 },
-      { name: 'ALTA', value: 3 }
-    ];
-
     this.findAllClientes();
     this.findAllTecnicos();
   }
 
   create(): void {
-    this.chamadoService.create(this.chamado).subscribe(resposta => {
-      this.toastService.success('Chamado criado com sucesso', 'Novo chamado');
-      this.router.navigate(['chamados']);
-    }, ex => {
-      console.log(ex);
-      
-      this.toastService.error(ex.error.error);
-    })
-  }
+    // Verifica se os campos estão válidos
+    if (!this.validaCampos()) {
+      return;
+    }
+  
+    // Define apenas o ID do cliente e do técnico
+    this.chamado.cliente = this.chamado.cliente.id;
+    this.chamado.tecnico = this.chamado.tecnico.id;
+  
+    // Envia o chamado para o serviço
+    this.chamadoService.create(this.chamado).subscribe(
+      resposta => {
+        this.toastService.success('Chamado criado com sucesso', 'Novo chamado');
+        this.router.navigate(['chamados']);
+      },
+      ex => {
+        console.log(ex);
+        this.toastService.error(ex.error.error);
+      }
+    );
+  }  
   
   findAllClientes(): void {
     this.clienteService.findAll().subscribe(resposta => {
@@ -118,5 +119,5 @@ export class ChamadoCreateComponent implements OnInit {
 
     return this.prioridadeValid && this.statusValid && this.tituloValid 
        && this.observacoesValid && this.tecnicoValid && this.clienteValid;
-  }
+}
 }

@@ -9,30 +9,30 @@
             <small id="username-help">Ex: Computador está lento</small>
         </div>
 
-    <div class="form-group">
-        <label for="status">Status:</label>
-        <p-dropdown [(ngModel)]="chamado.status" name="status" [formControl]="statusControl" [options]="status" optionLabel="name" placeholder="Selecione o status" id="status"></p-dropdown>
-    </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <p-dropdown [(ngModel)]="chamado.status" name="status" [formControl]="statusControl" [options]="statusOptions" placeholder="Selecione o status" id="status"></p-dropdown>
+        </div>
+                    
+        <div class="form-group">
+            <label for="prioridade">Prioridade:</label>
+            <p-dropdown [(ngModel)]="chamado.prioridade" name="prioridade" [formControl]="prioridadeControl" [options]="prioridadeOptions" placeholder="Selecione a prioridade" id="prioridade"></p-dropdown>
+        </div>
+        
+        <div class="form-group">
+            <label for="tecnico">Técnico:</label>
+            <p-dropdown [(ngModel)]="chamado.tecnico" name="tecnico" [formControl]="tecnicoControl" [options]="tecnicos" optionLabel="nome" placeholder="Selecione um técnico" id="tecnico"></p-dropdown>
+        </div>    
 
-    <div class="form-group">
-        <label for="prioridade">Prioridade:</label>
-        <p-dropdown [(ngModel)]="chamado.prioridade" name="prioridade" [formControl]="prioridadeControl" [options]="prioridade" optionLabel="name" placeholder="Selecione a prioridade" id="prioridade"></p-dropdown>
-    </div>
+        <div class="form-group">
+            <label for="cliente">Cliente:</label>
+            <p-dropdown [(ngModel)]="chamado.cliente" name="cliente" [formControl]="clienteControl" [options]="clientes" optionLabel="nome" placeholder="Selecione um cliente" id="cliente"></p-dropdown>
+        </div>    
 
-    <div class="form-group">
-        <label for="tecnico">Técnico:</label>
-        <p-dropdown name="tecnico" [formControl]="tecnicoControl" [options]="tecnicos" optionLabel="nome" placeholder="Selecione um técnico" id="tecnico"></p-dropdown>
-    </div>    
-
-    <div class="form-group">
-        <label for="cliente">Cliente:</label>
-        <p-dropdown [(ngModel)]="chamado.cliente" name="cliente" [formControl]="clienteControl" [options]="clientes" optionLabel="nome" placeholder="Selecione um cliente" id="cliente"></p-dropdown>
-    </div>    
-
-    <div class="form-group">
-        <label for="descricao">Observações:</label>
-        <textarea [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoesControl" id="descricao" class="descricao" rows="5" cols="30" pInputTextarea></textarea>
-    </div>
+        <div class="form-group">
+            <label for="descricao">Observações:</label>
+            <textarea [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoesControl" id="descricao" class="descricao" rows="5" cols="30" pInputTextarea></textarea>
+        </div>
 
         <p-button (click)="create()" [disabled]="!validaCampos()" class="btn-abrir">Criar Chamado</p-button>
     </div>
