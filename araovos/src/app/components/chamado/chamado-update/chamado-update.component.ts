@@ -7,17 +7,14 @@ import { ChamadoService } from '../../../services/chamado.service';
 import { ClienteService } from '../../../services/cliente.service';
 import { TecnicoService } from '../../../services/tecnico.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-chamado-update',
   templateUrl: './chamado-update.component.html',
-  styleUrl: './chamado-update.component.css'
+  styleUrls: ['./chamado-update.component.css'] // Corrigir o nome da propriedade 'styleUrls'
 })
-export class ChamadoUpdateComponent implements OnInit{
-
-  prioridade: string | undefined;
-  status: string | undefined;
+export class ChamadoUpdateComponent implements OnInit {
 
   chamado: Chamado = {
     prioridade: '',
@@ -28,7 +25,7 @@ export class ChamadoUpdateComponent implements OnInit{
     cliente: '',
     nomeCliente: '',
     nomeTecnico: '',
-  }
+  };
 
   clientes: Cliente[] = [];
   tecnicos: Tecnico[] = [];
@@ -47,19 +44,17 @@ export class ChamadoUpdateComponent implements OnInit{
   tecnicoControl: FormControl = new FormControl(null, [Validators.required]);
   clienteControl: FormControl = new FormControl(null, [Validators.required]);
 
-  // Mapeamento de nomes para valores numéricos
   statusOptions: any[] = [
     { label: 'ABERTO', value: 0 },
     { label: 'EM ANDAMENTO', value: 1 },
-    { label: 'ENCERRADO', value: 3 }
+    { label: 'ENCERRADO', value: 2 }
   ];
 
   prioridadeOptions: any[] = [
     { label: 'BAIXA', value: 0 },
     { label: 'MEDIA', value: 1 },
-    { label: 'ALTA', value: 3 }
+    { label: 'ALTA', value: 2 }
   ];
-
 
   constructor(
     private chamadoService: ChamadoService,
@@ -67,44 +62,71 @@ export class ChamadoUpdateComponent implements OnInit{
     private tecnicoService: TecnicoService,
     private toastService: ToastrService,
     private router: Router,
-  ) {}
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    const chamadoId = this.route.snapshot.paramMap.get('id');
+    this.findById(chamadoId);
     this.findAllClientes();
     this.findAllTecnicos();
   }
 
-  create(): void {
+  findById(id: string | null): void {
+    if (!id) return;
+    this.chamadoService.findById(id).subscribe(
+      (resposta: Chamado) => {
+        this.chamado = resposta;
+        // Defina os valores iniciais dos dropdowns com base nos valores do chamado
+        this.prioridadeControl.setValue(this.chamado.prioridade);
+        this.statusControl.setValue(this.chamado.status);
+        this.tecnicoControl.setValue(this.chamado.tecnico);
+        this.clienteControl.setValue(this.chamado.cliente);
+      },
+      (error) => {
+        this.toastService.error(error.error.error);
+      }
+    );
+  }
+
+  update(): void {
     if (!this.validaCampos()) {
       return;
     }
-    this.chamado.cliente = this.chamado.cliente.id;
-    this.chamado.tecnico = this.chamado.tecnico.id;
-  
-    this.chamadoService.create(this.chamado).subscribe(
-      resposta => {
-        this.toastService.success('Chamado criado com sucesso', 'Novo chamado');
+    this.chamadoService.update(this.chamado).subscribe(
+      (resposta) => {
+        this.toastService.success('Chamado atualizado com sucesso', 'Editar chamado');
         this.router.navigate(['chamados']);
       },
-      ex => {
-        console.log(ex);
-        this.toastService.error(ex.error.error);
+      (error) => {
+        console.log(error);
+        this.toastService.error(error.error.error);
       }
     );
-  }  
-  
+  }
+
   findAllClientes(): void {
-    this.clienteService.findAll().subscribe(resposta => {
-      this.clientes = resposta as Cliente[];
-    })
+    this.clienteService.findAll().subscribe(
+      (resposta) => {
+        this.clientes = resposta as Cliente[];
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   findAllTecnicos(): void {
-    this.tecnicoService.findAll().subscribe(resposta => {
-      this.tecnicos = resposta as Tecnico[];
-    });
+    this.tecnicoService.findAll().subscribe(
+      (resposta) => {
+        this.tecnicos = resposta as Tecnico[];
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
-  
+
   validaCampos(): boolean {
     this.prioridadeValid = this.prioridadeControl.valid && this.chamado.prioridade !== null;
     this.statusValid = this.statusControl.valid && this.chamado.status !== null;
@@ -115,5 +137,5 @@ export class ChamadoUpdateComponent implements OnInit{
 
     return this.prioridadeValid && this.statusValid && this.tituloValid 
        && this.observacoesValid && this.tecnicoValid && this.clienteValid;
-}
+  }
 }

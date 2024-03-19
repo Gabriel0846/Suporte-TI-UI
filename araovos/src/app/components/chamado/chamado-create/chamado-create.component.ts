@@ -51,13 +51,13 @@ export class ChamadoCreateComponent implements OnInit {
   statusOptions: any[] = [
     { label: 'ABERTO', value: 0 },
     { label: 'EM ANDAMENTO', value: 1 },
-    { label: 'ENCERRADO', value: 3 }
+    { label: 'ENCERRADO', value: 2 }
   ];
 
   prioridadeOptions: any[] = [
     { label: 'BAIXA', value: 0 },
     { label: 'MEDIA', value: 1 },
-    { label: 'ALTA', value: 3 }
+    { label: 'ALTA', value: 2 }
   ];
 
 

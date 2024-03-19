@@ -1,11 +1,11 @@
 <div class="container">
-    <p-button routerLink="../" label="Voltar" class="voltar-button"><i class="pi pi-arrow-left"></i></p-button>
+    <p-button routerLink="../../" label="Voltar" class="voltar-button"><i class="pi pi-arrow-left"></i></p-button>
     <div class="p-card p-fluid">
         <h2>Editar chamado</h2>
 
         <div class="form-group">
-            <label for="username">Título do Chamado <span class="required-field">*</span></label>
-            <input [(ngModel)]="chamado.titulo" name="titulo" [formControl]="tituloControl" required pInputText id="username"/>
+            <label for="titulo">Título do Chamado <span class="required-field">*</span></label>
+            <input [(ngModel)]="chamado.titulo" name="titulo" [formControl]="tituloControl" required pInputText id="titulo"/>
             <small id="username-help">Ex: Computador está lento</small>
         </div>
 
@@ -21,19 +21,19 @@
         
         <div class="form-group">
             <label for="tecnico">Técnico:</label>
-            <p-dropdown [(ngModel)]="chamado.tecnico" name="tecnico" [formControl]="tecnicoControl" [options]="tecnicos" optionLabel="nome" placeholder="Selecione um técnico" id="tecnico"></p-dropdown>
-        </div>    
-
+            <p-dropdown [(ngModel)]="chamado.nomeTecnico" name="tecnico" [formControl]="tecnicoControl" [options]="tecnicos" optionLabel="nome" placeholder="Selecione um técnico" id="tecnico"></p-dropdown>
+        </div>
+        
         <div class="form-group">
             <label for="cliente">Cliente:</label>
-            <p-dropdown [(ngModel)]="chamado.cliente" name="cliente" [formControl]="clienteControl" [options]="clientes" optionLabel="nome" placeholder="Selecione um cliente" id="cliente"></p-dropdown>
+            <p-dropdown [(ngModel)]="chamado.nomeCliente" name="cliente" [formControl]="clienteControl" [options]="clientes" optionLabel="nome" placeholder="{{ chamado.nomeCliente }}" id="cliente"></p-dropdown>
         </div>    
 
         <div class="form-group">
-            <label for="descricao">Observações:</label>
-            <textarea [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoesControl" id="descricao" class="descricao" rows="5" cols="30" pInputTextarea></textarea>
+            <label for="observacoes">Observações:</label>
+            <textarea [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoesControl" id="observacoes" class="descricao" rows="5" cols="30" pInputTextarea></textarea>
         </div>
 
-        <p-button (click)="create()" [disabled]="!validaCampos()" class="btn-abrir">Criar Chamado</p-button>
+        <p-button (click)="update()" [disabled]="!validaCampos()" class="btn-abrir">Atualizar Chamado</p-button>
     </div>
 </div>
