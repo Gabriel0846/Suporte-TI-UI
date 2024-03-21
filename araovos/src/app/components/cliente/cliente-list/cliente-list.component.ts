@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Cliente } from '../../../modelos/cliente';
 import { ClienteService } from '../../../services/cliente.service';
 
@@ -12,6 +12,7 @@ export class ClienteListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];
   ELEMENT_DATA: Cliente[] = [];
   filteredData: Cliente[];
+  @ViewChild('searchInput') searchInput: ElementRef;
 
   constructor(private service: ClienteService) { }
 
@@ -33,5 +34,10 @@ export class ClienteListComponent implements OnInit {
       cliente.cpf.toLowerCase().includes(value) ||
       cliente.email.toLowerCase().includes(value)
     );
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    this.searchInput.nativeElement.focus();
   }
 }

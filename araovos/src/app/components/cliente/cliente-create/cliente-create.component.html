@@ -4,14 +4,14 @@
         <div class="login-container">
             <div class="login-card">
                 <div class="p-card p-fluid">
-                    <h2>Cadastrar Cliente</h2>
                     <form>
-                        <h3>Dados do Usuário</h3>
+                        <h2>Cadastrar Cliente</h2>
+                        <h3>Dados do Usuário:</h3>
 
                         <div class="flex flex-column gap-2">
                             <span class="p-float-label">
                                 <input type="text" pInputText name="nome" [(ngModel)]="cliente.nome" [formControl]="nome" required/>
-                                <label for="nome">Nome</label>
+                                <label for="nome"><i class="pi pi-user"></i> Nome<span class="required-field">*</span></label>
                             </span>
                             <small id="nome-help">Exemplo: Gabriel Lopes</small>
                         </div>
@@ -19,7 +19,7 @@
                         <div class="flex flex-column gap-2">
                             <span class="p-float-label">
                                 <p-inputMask mask="999.999.999-99" name="cpf" type="text" [(ngModel)]="cliente.cpf" [formControl]="CPF" />
-                                <label for="CPF">CPF</label>
+                                <label for="CPF"><i class="pi pi-id-card"></i> CPF<span class="required-field">*</span></label>
                             </span>
                             <small id="CPF-help">Exemplo: 123.456.789-10</small>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="flex flex-column gap-2">
                             <span class="p-float-label">
                                 <input type="email" pInputText name="email" [(ngModel)]="cliente.email" [formControl]="email" required />
-                                <label for="email">Email</label>
+                                <label for="email"><i class="pi pi-envelope"></i> Email<span class="required-field">*</span></label>
                             </span>
                             <small>Exemplo: exemplo&#64;email.com</small>
                         </div>
@@ -35,7 +35,7 @@
                         <div class="flex flex-column gap-2">
                             <span class="p-float-label">
                                 <input type="password" pInputText name="senha" [(ngModel)]="cliente.senha" [formControl]="senha" required/>
-                                <label for="senha">Senha</label>
+                                <label for="senha"><i class="pi pi-lock"></i> Senha<span class="required-field">*</span></label>
                             </span>
                             <small>Exemplo: EuAmoBackEnd</small>
                         </div>

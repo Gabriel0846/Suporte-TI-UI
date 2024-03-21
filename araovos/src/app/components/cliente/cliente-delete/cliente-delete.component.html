@@ -11,34 +11,31 @@
                         <div class="flex flex-column gap-2">
                             <span class="p-float-label">
                                 <input type="text" pInputText name="nome" [(ngModel)]="cliente.nome" [disabled]="true"/>
-                                <label for="nome">Nome</label>
+                                <label for="nome"><i class="pi pi-user"></i> Nome</label>
                             </span>
-                            <small id="nome-help">Exemplo: Gabriel Lopes</small>
                         </div>
 
                         <div class="flex flex-column gap-2">
                             <span class="p-float-label">
                                 <p-inputMask mask="999.999.999-99" name="cpf" type="text" [(ngModel)]="cliente.cpf" [disabled]="true" />
-                                <label for="CPF">CPF</label>
+                                <label for="CPF"><i class="pi pi-id-card"></i> CPF</label>
                             </span>
-                            <small id="CPF-help">Exemplo: 123.456.789-10</small>
                         </div>
 
                         <div class="flex flex-column gap-2">
                             <span class="p-float-label">
                                 <input type="email" pInputText name="email" [(ngModel)]="cliente.email" [disabled]="true" />
-                                <label for="email">Email</label>
+                                <label for="email"><i class="pi pi-envelope"></i> Email</label>
                             </span>
-                            <small>Exemplo: exemplo&#64;email.com</small>
                         </div>
 
                         <div class="flex flex-column gap-2">
                             <span class="p-float-label">
                                 <input type="password" pInputText name="senha" [(ngModel)]="cliente.senha" [disabled]="true"/>
-                                <label for="senha">Senha</label>
+                                <label for="senha"><i class="pi pi-lock"></i> Senha</label>
                             </span>
-                            <small>Exemplo: EuAmoBackEnd</small>
                         </div>
+                        <small id="delete-help">ATENÇÃO: ao clicar em deletar este cliente sera deletado permanentemente!</small>
                         <p-button id="deletarButton" (click)="deletar()" label="Deletar"></p-button>
                     </form>
                 </div>

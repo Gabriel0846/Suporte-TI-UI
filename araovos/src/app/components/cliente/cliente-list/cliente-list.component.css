@@ -1,18 +1,62 @@
-h2 {
-    width: 100%;
-    text-align: center;
+.card-container {
+  margin: 17px;
 }
 
-.card-container {
-    margin: 17px; 
+h2 {
+  text-align: center;
+  color: black;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.search-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-container input {
+  width: 100%;
+  padding-right: 30px;
+  border-radius: 5px;
+  border: 1px solid green;
+  height: 45px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  color: green;
+  cursor: pointer;
 }
 
 .pi-trash {
-    color: red
+  color: red;
 }
 
 .pi-pencil {
-    color: green;
-    margin-right: 1rem;
+  color: green;
+  margin-right: 1rem;
+}
+
+.p-paginator-current {
+  color: green;
+}
+
+.p-paginator {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.p-paginator-page.p-highlight {
+  background: rgb(215, 255, 224);
+  border-color: rgb(215, 255, 224);
+  color: green;
 }
 

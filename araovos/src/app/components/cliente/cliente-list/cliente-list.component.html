@@ -1,44 +1,49 @@
 <div class="card-container">
-<div class="card">
-  <h2>Lista de Clientes</h2>
-  <p-button routerLink="criar" icon="pi pi-user-plus"></p-button>
-  <input type="text" #searchInput placeholder="Buscar..." (input)="applyFilter(searchInput.value)" />
-  <p-table
-    [value]="ELEMENT_DATA"
-    [value]="filteredData"
-    [paginator]="true"
-    [rows]="5"
-    [showCurrentPageReport]="true"
-    [tableStyle]="{ 'min-width': '50rem' }"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    (onPage)="($event)"
-    [rowsPerPageOptions]="[10, 25, 50]"
-  >
-    <ng-template pTemplate="header">
-      <tr>
-        <th style="width:25%">Id</th>
-        <th style="width:25%">Nome</th>
-        <th style="width:25%">CPF</th>
-        <th style="width:25%">Email</th>
-        <th style="width:25%">Ações</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-Cliente>
-      <tr>
-        <td>{{ Cliente.id }}</td>
-        <td>{{ Cliente.nome }}</td>
-        <td>{{ Cliente.cpf }}</td>
-        <td>{{ Cliente.email }}</td>
-        <td class="colunaacoes">
-          <a routerLink="editar/{{ Cliente.id }}">
-            <i class="pi pi-pencil"> </i>
-          </a>
-          <a routerLink="deletar/{{ Cliente.id }}">
-            <i class="pi pi-trash"></i>
-          </a>
-        </td>
-      </tr>
-    </ng-template>
-  </p-table>
-</div>
+  <div class="card">
+    <h2>Lista de Clientes</h2>
+    <div class="filter-container">
+      <div class="search-input-container">
+        <input type="text" #searchInput placeholder=" Buscar" (input)="applyFilter(searchInput.value)" />
+        <i class="pi pi-search search-icon"></i>
+      </div>
+      <p-button routerLink="criar" icon="pi pi-user-plus"></p-button>
+    </div>
+    <p-table
+      [value]="ELEMENT_DATA"
+      [value]="filteredData"
+      [paginator]="true"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      (onPage)="($event)"
+      [rowsPerPageOptions]="[5,10, 25, 50]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width:25%">Id</th>
+          <th style="width:25%">Nome</th>
+          <th style="width:25%">CPF</th>
+          <th style="width:25%">Email</th>
+          <th style="width:25%">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-Chamado>
+        <tr>
+          <td>{{ Chamado.id }}</td>
+          <td>{{ Chamado.nome }}</td>
+          <td>{{ Chamado.cpf }}</td>
+          <td>{{ Chamado.email }}</td>
+          <td class="colunaacoes">
+            <a routerLink="editar/{{ Chamado.id }}">
+              <i class="pi pi-pencil"> </i>
+            </a>
+            <a routerLink="deletar/{{ Chamado.id }}">
+              <i class="pi pi-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
