@@ -29,3 +29,36 @@
   .p-card-title, .p-card-subtitle {
     color: black;
   }
+
+  th {
+    color: black;
+  }
+
+  .p-paginator-current {
+    color: green;
+  }
+  
+  .p-paginator {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .p-paginator-page.p-highlight {
+    background: rgb(215, 255, 224);
+    border-color: rgb(215, 255, 224);
+    color: green;
+  }
+
+  .p-dropdown-item.p-highlight.p-focus {
+    background: rgb(215, 255, 224);
+  }
+
+  .p-dropdown {
+    border-color: green;
+  }
+
+  .p-dropdown:active,
+  .p-dropdown:focus {
+    box-shadow: none;
+  }

@@ -45,33 +45,9 @@
   margin: auto;
 }
 
-.p-dropdown-item.p-highlight.p-focus {
-  background: rgb(215, 255, 224);
-}
-
-.p-paginator-current {
-  color: green;
-}
-
-.p-paginator {
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.p-paginator-page.p-highlight {
-  background: rgb(215, 255, 224);
-  border-color: rgb(215, 255, 224);
-  color: green;
-}
-
 .p-focus {
   box-shadow: none;
   border-color: rgb(215, 255, 224);
-}
-
-span {
-  color: green;
 }
 
 .p-button-eye {

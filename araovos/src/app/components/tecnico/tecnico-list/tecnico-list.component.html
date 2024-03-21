@@ -1,8 +1,13 @@
 <div class="card-container">
 <div class="card">
   <h2>Lista de Tecnicos</h2>
-  <p-button routerLink="criar" icon="pi pi-user-plus"></p-button>
-  <input type="text" #searchInput placeholder="Buscar..." (input)="applyFilter(searchInput.value)" />
+  <div class="filter-container">
+    <div class="search-input-container">
+      <input type="text" #searchInput placeholder=" Buscar" (input)="applyFilter(searchInput.value)" />
+      <i class="pi pi-search search-icon"></i>
+    </div>
+    <p-button routerLink="criar" icon="pi pi-user-plus"></p-button>
+  </div>
   <p-table
     [value]="ELEMENT_DATA"
     [value]="filteredData"
