@@ -3,141 +3,29 @@
 @import "primeicons/primeicons.css";
 @import '../node_modules/ngx-toastr/toastr.css';
 
-
 .p-button {
     margin-bottom: 10px;
-    background: rgb(82, 201, 108);
-    background-color: rgb(82, 201, 108);
-    border-color: rgb(82, 201, 108);
-    color: white
-}
-
-.p-button-label {
+    background: rgb(65, 161, 86);
+    background-color: rgb(65, 161, 86);
+    border-color: rgb(65, 161, 86);
     color: white;
-}
-
-.p-button:hover {
+  }
+  
+  .p-button:hover {
     background: green;
     border-color: green;
-}
-
-.p-button:focus,
-.p-button:active {
+  }
+  
+  .p-button:focus,
+  .p-button:active {
     outline: none;
     box-shadow: none;
-}
-
-.p-sidebar-close-icon {
-    color: rgb(82, 201, 108);
-}
-
-.p-card {
-    padding: 20px;
-    width: 90%;
-    margin: auto;
-}
-
-p {
-    color: rgb(65, 161, 86);
-}
-
-.p-card-title {
-  color: rgb(65, 161, 86);
-}
-
-.p-card-subtitle {
-  color: rgb(82, 201, 108);
-}
-
-i {
-    color: white;
-}
-
-.pi-bars {
-    color: white;
-}
-
-.pi-refresh {
-    color: white;
-}
-
-.pi-plus {
-    color: white;
-}
-
-.pi-check {
-    color: white;
-}
-
-.pi-user-plus {
-    color: white;
-}
-
-.pi-home {
-    color: green;
-}
-
-.pi-briefcase {
-    color: green;
-}
-
-.pi-user {
-    color: green;
-}
-
-.pi-info-circle {
-    color: green;
-}
-
-.pi-sign-in{
-    color: green;
-}
-
-.pi-bell {
-    color: green;
-}
-
-.pi-eye {
-  color: green;
-}
-
-.pi-pencil {
-  color: green;
-}
-
-.p-dropdown:not(.p-disabled):hover {
-    border-color: green;
-}
-
-.p-dropdown-item.p-highlight.p-focus {
-    background: rgb(215, 255, 224);
   }
 
-.p-paginator-current {
-    color: green;
-}
-
-.p-paginator {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-.p-paginator-page.p-highlight {
-    background: rgb(215, 255, 224);
-    border-color: rgb(215, 255, 224);
-    color: green;
-}
-
-.p-focus {
-    box-shadow: none;
-    border-color:rgb(215, 255, 224) ;
-}
-
-span {
-    color: green;
-}
-
-
-
-
+  .p-sidebar-icon {
+    color: black;
+  }
+  
+  .p-card-title, .p-card-subtitle {
+    color: black;
+  }

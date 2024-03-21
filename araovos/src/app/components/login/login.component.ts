@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Credenciais } from '../../modelos/credenciais';
 import { FormControl, Validators } from '@angular/forms';
-import { ToastrService} from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-login',
@@ -38,9 +37,12 @@ export class LoginComponent implements OnInit {
       this.toast.error('Usuário e/ou senha inválidos');
     })
   }
-  
 
   validarCampos(): boolean {
-    return this.email.valid && this.senha.valid
+    return this.email.valid && this.senha.valid;
+  }
+
+  togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
   }
 }

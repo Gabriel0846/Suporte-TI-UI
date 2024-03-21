@@ -16,46 +16,107 @@
 
 .p-field {
   margin-bottom: 20px;
+  border-color: rgb(65, 161, 86);
 }
 
-button {
-  width: 100%;
+.p-field input:focus,
+.p-field input:hover {
+  outline: none;
+  box-shadow: none;
+  border-color: rgb(65, 161, 86);
 }
 
-/* Estilo para o botão ao lado do campo de senha */
-.p-field .p-password .p-inputtext {
-  width: calc(100% - 32px); /* Garante que o campo de senha não ultrapasse o botão */
-}
-
-.p-field .p-password .p-inputwrapper {
+.p-field .p-password {
   display: flex;
   align-items: center;
-  position: relative;
+}
+
+.p-field .p-password input {
+  flex: 1;
 }
 
 .p-field .p-password button {
-  position: absolute;
-  right: 6px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: 10px;
+}
+
+.p-card {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+.p-dropdown-item.p-highlight.p-focus {
+  background: rgb(215, 255, 224);
+}
+
+.p-paginator-current {
+  color: green;
+}
+
+.p-paginator {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.p-paginator-page.p-highlight {
+  background: rgb(215, 255, 224);
+  border-color: rgb(215, 255, 224);
+  color: green;
+}
+
+.p-focus {
+  box-shadow: none;
+  border-color: rgb(215, 255, 224);
+}
+
+span {
+  color: green;
+}
+
+.p-button-eye {
+  color: green;
+  background: white;
+  background-color: white;
+  width: auto;
+  height: auto;
+  margin-bottom: -1px;
+}
+
+.p-button-eye:hover {
+  color: black;
+  background: white;
+}
+
+.eye-icon {
+  color: green;
+}
+
+.p-password {
+  display: flex;
+  align-items: center;
+}
+
+.p-password input {
+  flex: 1;
+  margin-right: 70px;
+}
+
+.p-button-eye {
+  background: none;
   cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
+  height: 100%;
+  position: absolute;
+  right: 5px;
+}
+.p-button-eye i {
+  font-size: 1.2em;
 }
 
-.p-field .p-password button:focus {
-  background: none;
+.p-button-eye:hover {
+  color: black;
 }
 
-.p-field .p-password button:hover {
-  background: none;
-}
-
-.p-button-text {
-  border-left: 1rem;
-  border-right: 1rem;
-  border-top: 1rem;
-  width: 20%;
-  color: white;
+h2 {
+  color: black;
 }

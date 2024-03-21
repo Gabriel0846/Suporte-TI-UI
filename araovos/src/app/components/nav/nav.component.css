@@ -20,7 +20,7 @@
   .menu-item {
     display: flex;
     align-items: center;
-    color: rgb(82, 201, 108);
+    color: rgb(65, 161, 86);
     text-decoration: none;
     margin-bottom: 15px;
     font-size: 18px;
@@ -28,7 +28,7 @@
   }
   
   .menu-item:hover {
-    background-color: #f0f0f0;
+    background-color: rgb(215, 255, 224);
     border-radius: 4px;
   }
   
@@ -40,8 +40,6 @@
     margin-top: -60px;
     margin-left: 1rem;
   }
-  
-  .custom-sidebar .p-button {
-    border: none; 
-  }
+
+
   

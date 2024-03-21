@@ -1,7 +1,7 @@
 <div class="login-container">
   <div class="login-card">
     <div class="p-card p-fluid">
-      <h2>Login</h2>
+      <h2 class="p-card-title">Login</h2>
       <form>
         <div class="p-field">
           <label for="username">Email</label>
@@ -16,16 +16,21 @@
         </div>
         <div class="p-field">
           <label for="password">Senha</label>
-          <input
-            type="password"
-            id="password"
-            pInputText
-            [(ngModel)]="creds.senha"
-            [formControl]="senha"
-            required>
+          <div class="p-password">
+            <input
+              type="{{ passwordVisible ? 'text' : 'password' }}"
+              id="password"
+              pInputText
+              [(ngModel)]="creds.senha"
+              [formControl]="senha"
+              required>
+            <button type="button" (click)="togglePasswordVisibility()" pButton class="p-button-eye" pRipple>
+              <i class="pi pi-eye-slash" *ngIf="!passwordVisible"></i>
+              <i class="pi pi-eye" *ngIf="passwordVisible"></i>
+            </button>
+          </div>
         </div>
-        <button pButton pRipple (click)="logar()" [disabled]="!validarCampos()" type="button" pButton label="Entrar"></button>
-
+        <button pButton pRipple (click)="logar()" [disabled]="!validarCampos()" type="button" class="p-button" label="Entrar"></button>
       </form>
     </div>
   </div>
