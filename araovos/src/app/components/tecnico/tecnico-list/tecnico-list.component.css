@@ -22,9 +22,9 @@
   
   .search-input-container input {
     width: 100%;
-    padding-right: 30px; /* Espaço para o ícone de pesquisa */
+    padding-right: 30px;
     border-radius: 5px;
-    border: 1px solid green; /* Adapte a cor da borda conforme necessário */
+    border: 1px solid green;
     height: 45px;
   }
   
@@ -59,3 +59,4 @@
     border-color: rgb(215, 255, 224);
     color: green;
   }
+

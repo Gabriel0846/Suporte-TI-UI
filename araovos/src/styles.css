@@ -52,6 +52,7 @@
 
   .p-dropdown-item.p-highlight.p-focus {
     background: rgb(215, 255, 224);
+    box-shadow: none;
   }
 
   .p-dropdown {
@@ -59,6 +60,26 @@
   }
 
   .p-dropdown:active,
-  .p-dropdown:focus {
+  .p-dropdown:focus,
+  .p-dropdown:not(.p-disable) {
     box-shadow: none;
   }
+
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    color: green;
+    background: rgb(215, 255, 224);
+  }
+
+  .p-inputtext {
+  color: black;
+  }
+
+  input.p-inputtext.p-component.p-element.p-inputmask {
+    border-color: rgb(65, 161, 86);
+  }
+
+  .p-inputtext:enabled:hover,
+  .p-inputtext:enabled:focus {
+    border-color: rgb(65, 161, 86);
+    box-shadow: none;
+}

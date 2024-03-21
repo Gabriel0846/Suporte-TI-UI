@@ -14,3 +14,32 @@ p-ripple {
 span {
     color: white;
 }
+
+.p-button {
+    width: 100%;
+}
+
+form {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.p-card {
+    padding-top: 10px;
+}
+
+.flex-column {
+    padding-top: 10px;
+}
+
+h2, h3 {
+    color: black;
+}
+
+input {
+    border-color: green;
+}
+
+span {
+    color: red;
+}
