@@ -12,11 +12,11 @@ p-ripple {
 }
 
 span {
-    color: white;
+    color: red;
 }
 
 .card {
-    padding: 17px; /* Adiciona um padding interno */
+    padding: 17px;
 }
 
 .p-button {
