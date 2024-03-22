@@ -37,15 +37,18 @@ export class ClienteCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.cliente).subscribe(() => {
-      this.toast.success('Cliente cadastrado com sucesso', 'Cadastro');
-      this.router.navigate(['clientes'])
+      this.toast.success('Técnico cadastrado com sucesso', 'Cadastro');
+      this.router.navigate(['tecnicos']);
     }, ex => {
-      if(ex.error.errors) {
-        ex.error.errors.forEach(element => {
-          this.toast.error(element.message);
-        });
+      if (ex.error && ex.error.message) {
+        const errorMessage = this.extractCPFErrorMessage(ex.error.message);
+        if (errorMessage) {
+          this.toast.error(errorMessage);
+        } else {
+          this.toast.error(ex.error.message);
+        }
       } else {
-        this.toast.error(ex.error.message);
+        this.toast.error('Erro desconhecido ao cadastrar técnico');
       }
     })
   }
@@ -69,5 +72,10 @@ export class ClienteCreateComponent implements OnInit {
       return { 'cpfInvalido': true };
     }
     return null;
+  }
+  private extractCPFErrorMessage(errorMsg: string): string {
+    const regex = /número do registro de contribuinte individual brasileiro \(CPF\) inválido/g;
+    const matches = regex.exec(errorMsg);
+    return matches ? matches[0] : null;
   }
 }
