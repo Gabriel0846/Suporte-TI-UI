@@ -26,6 +26,7 @@
           <th style="width:25%">Data de Abertura</th>
           <th style="width:25%">Prioridade</th>
           <th style="width:25%">Status</th>
+          <th style="width:25%">Data de Fechamento</th>
           <th style="width:25%">Ações</th>
         </tr>
       </ng-template>
@@ -38,6 +39,7 @@
           <td>{{ chamado.dataAbertura }}</td>
           <td>{{ retornaPrioridade(chamado.prioridade) }}</td>
           <td>{{ retornaStatus(chamado.status) }}</td>
+          <td>{{ chamado.dataFechamento }}</td>
           <td class="colunaacoes">
             <a routerLink="editar/{{ chamado.id }}">
               <i class="pi pi-pencil"> </i>
