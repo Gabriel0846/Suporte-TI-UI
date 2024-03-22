@@ -1,18 +1,6 @@
-.container {
-    width: 45%;
-    margin: auto auto 3rem auto;
-    padding: 1rem;
-    border-radius: 1rem;
- }
-
 .status-prioridade {
     display: flex;
     justify-content: space-between;
-}
-
-.container {
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .form-group {
@@ -24,42 +12,61 @@
     margin-bottom: 5px;
 }
 
-.form-group input,
-.form-group textarea,
-.form-group .p-dropdown {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.form-group small {
-    display: block;
-    margin-top: 5px;
-    font-size: 12px;
-    color: #888;
-}
-
-/* Adjust PrimeNG Dropdown */
 .p-dropdown {
     width: 100%;
 }
 
-/* Optional: Adjust PrimeNG Dropdown Menu Height */
 .ui-dropdown-panel {
-    max-height: 200px; /* Adjust height as needed */
+    max-height: 200px;
     overflow-y: auto;
 }
 
 .form-group textarea {
     min-height: 6rem;
     max-height: 10rem;
-    height: auto; /* Para garantir que a altura se ajuste dinamicamente */
-    resize: vertical; /* Para permitir que o usuário redimensione verticalmente */
+    height: auto;
+    resize: vertical;
+}
+
+div {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+p-ripple {
+    color: white;
+}
+
+.voltar-button {
+    color: white;
+}
+
+.p-button {
+    width: 100%;
+}
+
+form {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.p-card {
+    padding-top: 10px;
+}
+
+.flex-column {
+    padding-top: 10px;
+}
+
+h2, h3 {
+    color: black;
+}
+
+input, textarea {
+    border-color: green;
 }
 
 span {
     color: red;
 }
+

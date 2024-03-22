@@ -21,17 +21,25 @@ export class ChamadoReadComponent {
     nomeTecnico: '',
   };
 
-  statusOptions: any[] = [
-    { label: 'ABERTO', value: 0 },
-    { label: 'EM ANDAMENTO', value: 1 },
-    { label: 'ENCERRADO', value: 2 }
-  ];
+  retornaStatus(status: any): string {
+    if(status == '0') {
+      return 'ABERTO'
+    } else if(status == '1') {
+      return 'EM ANDAMENTO'
+    } else {
+      return 'ENCERRADO'
+    }
+  }
 
-  prioridadeOptions: any[] = [
-    { label: 'BAIXA', value: 0 },
-    { label: 'MEDIA', value: 1 },
-    { label: 'ALTA', value: 2 }
-  ];
+  retornaPrioridade(prioridade: any): string {
+    if(prioridade == '0') {
+      return 'BAIXA'
+    } else if(prioridade == '1') {
+      return 'MÉDIA'
+    } else {
+      return 'ALTA'
+    }
+  }
 
   constructor(
     private chamadoService: ChamadoService,

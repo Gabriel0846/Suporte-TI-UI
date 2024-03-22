@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Chamado } from '../../../modelos/chamado';
 import { ChamadoService } from '../../../services/chamado.service';
 
@@ -10,6 +10,8 @@ import { ChamadoService } from '../../../services/chamado.service';
 export class ChamadoListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'titulo', 'nomeCliente', 'nomeTecnico', 'dataAbertura', 'prioridade', 'status', 'acoes'];
   ELEMENT_DATA: Chamado[] = [];
+  filteredData: Chamado[];
+  @ViewChild('searchInput') searchInput: ElementRef;
   
   constructor(private service: ChamadoService) {}
 
@@ -20,6 +22,7 @@ export class ChamadoListComponent implements OnInit {
   findAll(): void {
     this.service.findAll().subscribe(resposta => {
       this.ELEMENT_DATA = resposta;
+      this.filteredData = resposta;
   });
 }
 
@@ -44,5 +47,20 @@ export class ChamadoListComponent implements OnInit {
       default:
         return 'ALTA';
     }
+  }
+
+  applyFilter(value: string): void {
+    value = value.trim().toLowerCase();
+    this.filteredData = this.ELEMENT_DATA.filter(chamado =>
+      chamado.titulo.toLowerCase().includes(value) ||
+      chamado.nomeCliente.toLowerCase().includes(value) ||
+      chamado.nomeTecnico.toLowerCase().includes(value) ||
+      chamado.dataAbertura.toLowerCase().includes(value)
+    );
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    this.searchInput.nativeElement.focus();
   }
 }

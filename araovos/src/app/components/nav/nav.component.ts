@@ -1,5 +1,5 @@
 import { AuthService } from './../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -23,5 +23,12 @@ export class NavComponent implements OnInit {
     this.router.navigate(['login'])
     this.authService.logout();
     this.toast.info('Logout realizado com sucesso', 'Logout')
+  }
+
+  @HostListener('document:keydown.tab', ['$event'])
+  toggleSidebar(event: KeyboardEvent) {
+    if (event.key === 'Tab') {
+      this.sidebarVisible = !this.sidebarVisible;
+    }
   }
 }

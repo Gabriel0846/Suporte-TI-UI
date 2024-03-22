@@ -1,39 +1,42 @@
 <div class="container">
     <p-button routerLink="../" label="Voltar" class="voltar-button"><i class="pi pi-arrow-left"></i></p-button>
     <div class="p-card p-fluid">
-        <h2>Criando chamado</h2>
+        <form>
+            <h2>Criando chamado</h2>
 
-        <div class="form-group">
-            <label for="username">Título do Chamado<span class="required-field">*</span></label>
-            <input [(ngModel)]="chamado.titulo" name="titulo" [formControl]="tituloControl" required pInputText id="username"/>
-            <small id="username-help">Ex: Computador está lento</small>
-        </div>
+            <div class="form-group">
+                <label for="username"><i class="pi pi-pencil"></i> Título do Chamado<span class="required-field">*</span></label>
+                <input [(ngModel)]="chamado.titulo" name="titulo" [formControl]="tituloControl" required pInputText id="username"/>
+                <small id="username-help">Ex: Computador está lento</small>
+            </div>
 
-        <div class="form-group">
-            <label for="status">Status<span class="required-field">*</span></label>
-            <p-dropdown [(ngModel)]="chamado.status" name="status" [formControl]="statusControl" [options]="statusOptions" placeholder="Selecione o status" id="status"></p-dropdown>
-        </div>
-                    
-        <div class="form-group">
-            <label for="prioridade">Prioridade<span class="required-field">*</span></label>
-            <p-dropdown [(ngModel)]="chamado.prioridade" name="prioridade" [formControl]="prioridadeControl" [options]="prioridadeOptions" placeholder="Selecione a prioridade" id="prioridade"></p-dropdown>
-        </div>
-        
-        <div class="form-group">
-            <label for="tecnico">Técnico<span class="required-field">*</span></label>
-            <p-dropdown [(ngModel)]="chamado.tecnico" name="tecnico" [formControl]="tecnicoControl" [options]="tecnicos" optionLabel="nome" placeholder="Selecione um técnico" id="tecnico"></p-dropdown>
-        </div>    
+            <div class="form-group">
+                <label for="status"><i class="pi pi-tag"></i> Status<span class="required-field">*</span></label>
+                <p-dropdown [(ngModel)]="chamado.status" name="status" [formControl]="statusControl" [options]="statusOptions" placeholder="Selecione o status" id="status"></p-dropdown>
+            </div>
+                        
+            <div class="form-group">
+                <label for="prioridade"><i class="pi pi-star"></i> Prioridade<span class="required-field">*</span></label>
+                <p-dropdown [(ngModel)]="chamado.prioridade" name="prioridade" [formControl]="prioridadeControl" [options]="prioridadeOptions" placeholder="Selecione a prioridade" id="prioridade"></p-dropdown>
+            </div>
+            
+            <div class="form-group">
+                <label for="tecnico"><i class="pi pi-briefcase"></i> Técnico<span class="required-field">*</span></label>
+                <p-dropdown [(ngModel)]="chamado.tecnico" name="tecnico" [formControl]="tecnicoControl" [options]="tecnicos" optionLabel="nome" placeholder="Selecione um técnico" id="tecnico"></p-dropdown>
+            </div>    
 
-        <div class="form-group">
-            <label for="cliente">Cliente<span class="required-field">*</span></label>
-            <p-dropdown [(ngModel)]="chamado.cliente" name="cliente" [formControl]="clienteControl" [options]="clientes" optionLabel="nome" placeholder="Selecione um cliente" id="cliente"></p-dropdown>
-        </div>    
+            <div class="form-group">
+                <label for="cliente"><i class="pi pi-user"></i> Cliente<span class="required-field">*</span></label>
+                <p-dropdown [(ngModel)]="chamado.cliente" name="cliente" [formControl]="clienteControl" [options]="clientes" optionLabel="nome" placeholder="Selecione um cliente" id="cliente"></p-dropdown>
+            </div>    
 
-        <div class="form-group">
-            <label for="descricao">Observações<span class="required-field">*</span></label>
-            <textarea [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoesControl" id="descricao" class="descricao" rows="5" cols="30" pInputTextarea></textarea>
-        </div>
+            <div class="form-group">
+                <label for="descricao"><i class="pi pi-comment"></i> Observações<span class="required-field">*</span></label>
+                <textarea [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoesControl" id="descricao" class="descricao" rows="5" cols="30" pInputTextarea></textarea>
+                <small id="username-help">Descreva brevemente o problema.</small>
+            </div>
 
-        <p-button (click)="create()" [disabled]="!validaCampos()" class="btn-abrir">Criar Chamado</p-button>
+            <p-button (click)="create()" label="Criar Chamado" [disabled]="!validaCampos()" class="btn-abrir"></p-button>
+        </form>
     </div>
 </div>

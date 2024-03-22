@@ -1,38 +1,40 @@
 <div class="container">
     <p-button routerLink="../../" label="Voltar" class="voltar-button"><i class="pi pi-arrow-left"></i></p-button>
     <div class="p-card p-fluid">
+        <form>
         <h2>Editar chamado</h2>
 
         <div class="form-group">
-            <label for="titulo">Título do Chamado <span class="required-field">*</span></label>
+            <label for="username"><i class="pi pi-pencil"></i> Título do Chamado<span class="required-field">*</span></label>
             <input [(ngModel)]="chamado.titulo" name="titulo" [formControl]="tituloControl" required pInputText id="titulo"/>
         </div>
 
         <div class="form-group">
-            <label for="status">Status:</label>
+            <label for="status"><i class="pi pi-tag"></i> Status<span class="required-field">*</span></label>
             <p-dropdown [(ngModel)]="chamado.status" name="status" [formControl]="statusControl" [options]="statusOptions" placeholder="Selecione o status" id="status"></p-dropdown>
         </div>
                     
         <div class="form-group">
-            <label for="prioridade">Prioridade:</label>
+            <label for="prioridade"><i class="pi pi-star"></i> Prioridade<span class="required-field">*</span></label>
             <p-dropdown [(ngModel)]="chamado.prioridade" name="prioridade" [formControl]="prioridadeControl" [options]="prioridadeOptions" placeholder="Selecione a prioridade" id="prioridade"></p-dropdown>
         </div>
         
         <div class="form-group">
-            <label for="tecnico">Técnico:</label>
+            <label for="tecnico"><i class="pi pi-briefcase"></i> Técnico<span class="required-field">*</span></label>
             <p-dropdown [(ngModel)]="chamado.tecnico" name="tecnico" [formControl]="tecnicoControl" [options]="tecnicos" optionLabel="nome" placeholder="{{ chamado.nomeTecnico }}" id="tecnico"></p-dropdown>
         </div>
         
         <div class="form-group">
-            <label for="cliente">Cliente:</label>
+            <label for="cliente"><i class="pi pi-user"></i> Cliente<span class="required-field">*</span></label>
             <p-dropdown [(ngModel)]="chamado.cliente" name="cliente" [formControl]="clienteControl" [options]="clientes" optionLabel="nome" placeholder="{{ chamado.nomeCliente }}" id="cliente"></p-dropdown>
         </div>    
 
         <div class="form-group">
-            <label for="observacoes">Observações:</label>
+            <label for="descricao"><i class="pi pi-comment"></i> Observações<span class="required-field">*</span></label>
             <textarea [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoesControl" id="observacoes" class="descricao" rows="5" cols="30" pInputTextarea></textarea>
         </div>
 
-        <p-button (click)="update()" [disabled]="!validaCampos()" class="btn-abrir">Atualizar Chamado</p-button>
+        <p-button (click)="update()" label="Atualizar Chamado" [disabled]="!validaCampos()" class="btn-abrir"></p-button>
+    </form>
     </div>
 </div>
