@@ -77,7 +77,6 @@ export class ChamadoUpdateComponent implements OnInit {
     this.chamadoService.findById(id).subscribe(
       (resposta: Chamado) => {
         this.chamado = resposta;
-        // Defina os valores iniciais dos dropdowns com base nos valores do chamado
         this.prioridadeControl.setValue(this.chamado.prioridade);
         this.statusControl.setValue(this.chamado.status);
         this.tecnicoControl.setValue(this.chamado.tecnico);
@@ -135,7 +134,7 @@ export class ChamadoUpdateComponent implements OnInit {
     this.tecnicoValid = this.tecnicoControl.valid && this.chamado.tecnico !== null;
     this.clienteValid = this.clienteControl.valid && this.chamado.cliente !== null;
 
-    return this.prioridadeValid && this.statusValid && this.tituloValid 
+    return this.prioridadeValid && this.statusValid && this.tituloValid
        && this.observacoesValid && this.tecnicoValid && this.clienteValid;
   }
 }

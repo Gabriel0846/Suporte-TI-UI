@@ -37,8 +37,8 @@ export class ClienteCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.cliente).subscribe(() => {
-      this.toast.success('Técnico cadastrado com sucesso', 'Cadastro');
-      this.router.navigate(['tecnicos']);
+      this.toast.success('Cliente cadastrado com sucesso', 'Cadastro');
+      this.router.navigate(['clientes']);
     }, ex => {
       if (ex.error && ex.error.message) {
         const errorMessage = this.extractCPFErrorMessage(ex.error.message);
@@ -48,7 +48,7 @@ export class ClienteCreateComponent implements OnInit {
           this.toast.error(ex.error.message);
         }
       } else {
-        this.toast.error('Erro desconhecido ao cadastrar técnico');
+        this.toast.error('Erro desconhecido ao cadastrar cliente');
       }
     })
   }
@@ -59,13 +59,13 @@ export class ClienteCreateComponent implements OnInit {
     } else {
       this.cliente.perfis.push(perfil);
     }
-    
+
   }
 
   validaCampos(): boolean {
     return this.nome.valid && this.CPF.valid && this.email.valid && this.senha.valid;
   }
-  
+
   validaCPF(control: FormControl): { [key: string]: any } | null {
     const cpf = control.value ? control.value.replace(/\D/g, '') : '';
     if (cpf.length !== 11) {
